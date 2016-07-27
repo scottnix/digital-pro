@@ -1,0 +1,86 @@
+
+.site-title a {
+    display: inline-block;
+    text-indent: -9999px;
+    width: 278px;
+    height: 29px;
+    background: url(images/dustin-logo.png) no-repeat;
+}
+
+@media only screen and (min-width: 800px) {
+  .site-title a {
+      display: block;
+
+  }
+}
+
+
+// font testing
+// body {
+//   font-family: 'Muli', sans-serif;
+// }
+
+// body {
+//   font-family: 'Roboto', sans-serif;
+// }
+
+
+
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// .more-link,
+// button,
+// input[type="button"],
+// input[type="reset"],
+// input[type="submit"],
+// .button,
+// .entry-content a.button,
+// .textwidget a.button,
+// a.more-link,
+// .featured-content p.entry-meta,
+// .enews-widget input,
+// .site-title,
+// .genesis-nav-menu a,
+// p.entry-meta,
+// .pagination,
+// .sidebar .widgettitle,
+// .footer-widgets a,
+// .front-page-1 .widget_text .widget-title,
+// .front-page-2 ul li {
+//   font-family: 'Muli', sans-serif;
+//   letter-spacing: 0 !important;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// .more-link,
+// button,
+// input[type="button"],
+// input[type="reset"],
+// input[type="submit"],
+// .button,
+// .entry-content a.button,
+// .textwidget a.button,
+// a.more-link,
+// .featured-content p.entry-meta,
+// .enews-widget input,
+// .site-title,
+// .genesis-nav-menu a,
+// p.entry-meta,
+// .pagination,
+// .sidebar .widgettitle,
+// .footer-widgets a,
+// .front-page-1 .widget_text .widget-title,
+// .front-page-2 ul li {
+//   font-family: 'Roboto', sans-serif;
+//   letter-spacing: 0 !important;
+// }
