@@ -16,80 +16,81 @@
   License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 
-/* Table of Contents
-- Imports
-- HTML5 Reset
-  - Baseline Normalize
-  - Box Sizing
-  - Float Clearing
-- Defaults
-  - Typographical Elements
-  - Headings
-  - Objects
-  - Gallery
-  - Forms
-  - Column Classes
-  - Tables
-  - Screen Reader Text
-- Structure and Layout
-  - Site Container
-  - Site Inner
-- Common Classes
-  - Avatar
-  - Genesis
-  - Search Form
-  - Titles
-  - WordPress
-- Widgets
-  - Featured Content
-- Plugins
-  - Genesis eNews Extended
-  - Genesis Simple Share
-  - Jetpack
-- Skip Links
-- Site Header
-  - Site Title and Description
-- Site Navigation
-  - Accessible Menu
-  - Primary Navigation
-  - Secondary Navigation
-  - Responsive Navigation
-- Content Area
-  - Entries
-  - Intro Text
-  - Entry Meta
-  - After Entry
-  - Pagination
-  - Sidebar
-  - Comments
-- Footer Widgets
-- Site Footer
-- Fadeup Effect
-- Media Queries
-  - Min-width: 801px
-  - Max-width: 800px
-  - Max-width: 600px
-*/
+//  Table of Contents
+// - Imports
+// - HTML5 Reset
+//   - Baseline Normalize
+//   - Box Sizing
+//   - Float Clearing
+// - Defaults
+//   - Typographical Elements
+//   - Headings
+//   - Objects
+//   - Gallery
+//   - Forms
+//   - Column Classes
+//   - Tables
+//   - Screen Reader Text
+// - Structure and Layout
+//   - Site Container
+//   - Site Inner
+// - Common Classes
+//   - Avatar
+//   - Genesis
+//   - Search Form
+//   - Titles
+//   - WordPress
+// - Widgets
+//   - Featured Content
+// - Plugins
+//   - Genesis eNews Extended
+//   - Genesis Simple Share
+//   - Jetpack
+// - Skip Links
+// - Site Header
+//   - Site Title and Description
+// - Site Navigation
+//   - Accessible Menu
+//   - Primary Navigation
+//   - Secondary Navigation
+//   - Responsive Navigation
+// - Content Area
+//   - Entries
+//   - Intro Text
+//   - Entry Meta
+//   - After Entry
+//   - Pagination
+//   - Sidebar
+//   - Comments
+// - Footer Widgets
+// - Site Footer
+// - Fadeup Effect
+// - Media Queries
+//   - Min-width: 801px
+//   - Max-width: 800px
+//   - Max-width: 600px
+
 
 
 /* HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
 
-/* Baseline Normalize
---------------------------------------------- */
-/* normalize.css v3.0.1 | MIT License | git.io/normalize */
+// ==========================================================================
+// Normalize.css v3.0.1 | MIT License | git.io/normalize
+// ==========================================================================
 
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:600}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#5b5e5e}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:600}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+@import 'normalize';
+
 
 /* Box Sizing
 --------------------------------------------- */
 
 *,
-input[type="search"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing:    border-box;
-  box-sizing:         border-box;
+*:before,
+*:after {
+  box-sizing: border-box;
 }
+
 
 /* Float Clearing
 --------------------------------------------- */
@@ -169,11 +170,7 @@ textarea:focus,
 .button,
 .gallery img,
 .site-header {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition:    all 0.2s ease-in-out;
-  -ms-transition:     all 0.2s ease-in-out;
-  -o-transition:      all 0.2s ease-in-out;
-  transition:         all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 ::selection {
@@ -419,7 +416,7 @@ textarea {
   background-color: #f5f5f5;
   border: 1px solid #f5f5f5;
   color: #5b5e5e;
-  font-family: 'Neuton', serif;
+  font-family: 'Neuton', serif; // wtf is this font doing here
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 300;
@@ -451,15 +448,10 @@ input[type="radio"] {
   width: auto;
 }
 
-::-moz-placeholder {
+::placeholder {
   color: #999;
   font-weight: 300;
   opacity: 1;
-}
-
-::-webkit-input-placeholder {
-  color: #999;
-  font-weight: 300;
 }
 
 .more-link,
@@ -591,10 +583,10 @@ input:focus[type="submit"],
 .site-container input[type="reset"]:disabled:hover,
 .site-container input[type="submit"]:disabled,
 .site-container input[type="submit"]:disabled:hover {
-    background-color: #ddd;
+  background-color: #ddd;
   border-width: 0;
-    color: #777;
-    cursor: not-allowed;
+  color: #777;
+  cursor: not-allowed;
 }
 
 .button {
@@ -1274,24 +1266,24 @@ a[rel~="attachment"]:hover,
   display: none;
 }
 
+// removed skip links - reference skip-links comment in functions.php, needs to be looked into later.
+// /* Skip Links
+// ---------------------------------------------------------------------------------------------------- */
+// .genesis-skip-link {
+//   margin: 0;
+// }
 
-/* Skip Links
----------------------------------------------------------------------------------------------------- */
-.genesis-skip-link {
-  margin: 0;
-}
+// .genesis-skip-link li {
+//   height: 0;
+//   width: 0;
+//   list-style: none;
+// }
 
-.genesis-skip-link li {
-  height: 0;
-  width: 0;
-  list-style: none;
-}
-
-/* Display outline on focus */
-:focus {
-  color: #232525;
-  outline: #ddd solid 1px;
-}
+// /* Display outline on focus */
+// :focus {
+//   color: #232525;
+//   outline: #ddd solid 1px;
+// }
 
 
 /* Site Header
@@ -2697,3 +2689,10 @@ this was being called in queue after testing adding more unecessary complexity f
   }
 
 }
+
+
+// ==========================================================================
+// Testing File
+// ==========================================================================
+
+@import 'testing';
