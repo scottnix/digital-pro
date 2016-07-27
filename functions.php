@@ -28,7 +28,11 @@ function digital_scripts_styles() {
   // scott testing - way too many fonts, testing fonts.
   wp_enqueue_style( 'google-fonts2', '//fonts.googleapis.com/css?family=Muli|Roboto:400,500,700', array(), CHILD_THEME_VERSION );
 
+
   wp_enqueue_style( 'ionicons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
+
+  // scott testing - add testing file for variations.
+  wp_enqueue_style( 'testing-css', get_stylesheet_directory_uri() . '/testing.css', array(), CHILD_THEME_VERSION );
 
   wp_enqueue_script( 'digital-fadeup-script', get_stylesheet_directory_uri() . '/js/fadeup.js', array( 'jquery' ), '1.0.0', true );
   wp_enqueue_script( 'digital-site-header', get_stylesheet_directory_uri() . '/js/site-header.js', array( 'jquery' ), '1.0.0', true );
@@ -45,8 +49,7 @@ function digital_scripts_styles() {
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
 //* Add accessibility support
-// removed skip-links temporarily for SEO reasons, possibly look into how accessible this really even is.
-add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form') );
+add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
 
 //* Add screen reader class to archive description
 add_filter( 'genesis_attr_author-archive-description', 'genesis_attributes_screen_reader_class' );
