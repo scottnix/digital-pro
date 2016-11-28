@@ -336,3 +336,36 @@
 
 }
 
+
+// fix subscribe link
+.front-page-2 {
+  background-color: #232525;
+  .widget-wrap {
+  }
+  .enews-widget {
+    input[type="email"] {
+      @include breakpoint(800px) {
+          width: 50%;
+          float: left;
+          border: 2px solid #f5f5f5;
+      }
+    }
+    input[type="submit"] {
+      @include breakpoint(800px) {
+          width: 50%;
+          float: left;
+          border-radius: 0;
+      }
+    }
+  }
+  .widget-title {
+    color: #f1f1f1;
+  }
+}
+
+// stupid overspecific classes, need to fix eventually.
+
+.front-page-2 .flexible-widgets.widget-full .widget-wrap, .front-page-2 .flexible-widgets.widget-halves.uneven .widget:last-of-type .widget-wrap {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
