@@ -280,7 +280,9 @@ genesis_register_sidebar( array(
 
  //Change Genesis Footer Credit Copyright line
  function childtheme_footer_copyright_text () {
-  echo '<div class="creds"><p>Copyright &copy;' . date('Y') . ' </p></div>';
+  echo '<div class="creds"><p>Copyright &copy;' . date('Y') . ' | ';
+  echo '<span class="legal"><a href="http://dustintouchton.de/impressum/">Impressum</a></span>';
+  echo '</p></div>';
  }
  add_filter( 'genesis_footer_creds_text', 'childtheme_footer_copyright_text' );
 
@@ -291,5 +293,5 @@ genesis_register_sidebar( array(
 // https://my.studiopress.com/snippets/post-excerpts/
 add_filter( 'get_the_content_more_link', 'sp_read_more_link' );
 function sp_read_more_link() {
-  return '<a class="more-link" href="' . get_permalink() . '">Learn More</a>';
+  return '<a class="more-link" href="' . get_permalink() . '">Weiterlesen</a>';
 }
