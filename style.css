@@ -15,7 +15,7 @@
   License: GPL-2.0+
   License URI: http://www.opensource.org/licenses/gpl-license.php
 */
-/* HTML5 Reset
+/* Normalize.css
 ---------------------------------------------------------------------------------------------------- */
 progress, sub, sup {
   vertical-align: baseline;
@@ -204,15 +204,12 @@ textarea {
   box-sizing: border-box;
 }
 
-/* Float Clearing
---------------------------------------------- */
-.author-box:before,
-.clearfix:before,
+/* Float Clearin
+g--------------------------------------------- */
 .entry:before,
 .entry-content:before,
 .footer-widgets:before,
 .nav-primary:before,
-.nav-secondary:before,
 .pagination:before,
 .site-container:before,
 .site-footer:before,
@@ -224,13 +221,10 @@ textarea {
   display: table;
 }
 
-.author-box:after,
-.clearfix:after,
 .entry:after,
 .entry-content:after,
 .footer-widgets:after,
 .nav-primary:after,
-.nav-secondary:after,
 .pagination:after,
 .site-container:after,
 .site-footer:after,
@@ -1563,8 +1557,7 @@ a[rel~="attachment"]:hover,
 
 /* Entries
 --------------------------------------------- */
-.entry,
-.page.page-template-page_blog .entry {
+.entry {
   border-bottom: 1px solid #eee;
   margin-bottom: 10%;
   padding-bottom: 10%;
@@ -2703,6 +2696,20 @@ this was being called in queue after testing adding more unecessary complexity f
   padding-bottom: 2em;
 }
 
+/* Helper Classes
+---------------------------------------------------------------------------------------------------- */
+.author-box:before, .nav-secondary:before, .entry:before,
+.author-box:after,
+.nav-secondary:after,
+.entry:after {
+  content: " ";
+  display: table;
+}
+
+.author-box:after, .nav-secondary:after, .entry:after {
+  clear: both;
+}
+
 .site-title a {
   display: inline-block;
   text-indent: -9999px;
@@ -2716,9 +2723,12 @@ this was being called in queue after testing adding more unecessary complexity f
     display: block;
   }
 }
-.page-id-862 .sidebar {
-  display: none;
-}
-.page-id-862 .content {
+.page-fullwidth .content {
   width: 100%;
+}
+.page-fullwidth .entry-content {
+  max-width: none;
+}
+.page-fullwidth .entry-header {
+  max-width: none;
 }
