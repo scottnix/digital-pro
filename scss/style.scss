@@ -71,6 +71,9 @@
 //   - Max-width: 600px
 
 
+// ADD
+// -Helper Classes
+
 // sass mixins - sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins
 // ==========================================================================
 
@@ -87,12 +90,8 @@
   }
 }
 
-/* HTML5 Reset
+/* Normalize.css
 ---------------------------------------------------------------------------------------------------- */
-
-// ==========================================================================
-// Normalize.css v3.0.1 | MIT License | git.io/normalize
-// ==========================================================================
 
 @import 'normalize';
 
@@ -107,16 +106,14 @@
 }
 
 
-/* Float Clearing
---------------------------------------------- */
+/* Float Clearin
+g--------------------------------------------- */
 
-.author-box:before,
-.clearfix:before,
+
 .entry:before,
 .entry-content:before,
 .footer-widgets:before,
 .nav-primary:before,
-.nav-secondary:before,
 .pagination:before,
 .site-container:before,
 .site-footer:before,
@@ -128,13 +125,11 @@
   display: table;
 }
 
-.author-box:after,
-.clearfix:after,
+
 .entry:after,
 .entry-content:after,
 .footer-widgets:after,
 .nav-primary:after,
-.nav-secondary:after,
 .pagination:after,
 .site-container:after,
 .site-footer:after,
@@ -877,6 +872,7 @@ th {
 .author-box {
   font-size: 18px;
   font-size: 1.8rem;
+  @extend %clearfix;
 }
 
 .single .author-box {
@@ -1486,6 +1482,7 @@ a[rel~="attachment"]:hover,
 
 .nav-secondary {
   margin-top: 10px;
+  @extend %clearfix;
 }
 
 .nav-secondary .genesis-nav-menu a {
@@ -1534,11 +1531,12 @@ a[rel~="attachment"]:hover,
 /* Entries
 --------------------------------------------- */
 
-.entry,
-.page.page-template-page_blog .entry {
+
+.entry {
   border-bottom: 1px solid #eee;
   margin-bottom: 10%;
   padding-bottom: 10%;
+  @extend %clearfix;
 }
 
 .page .entry,
@@ -1554,6 +1552,8 @@ a[rel~="attachment"]:hover,
   margin-right: auto;
   max-width: 660px;
 }
+
+
 
 .page.page-template-page_blog .entry-content {
   max-width: none;
@@ -2373,6 +2373,11 @@ this was being called in queue after testing adding more unecessary complexity f
 
 @import 'front-page';
 
+/* Helper Classes
+---------------------------------------------------------------------------------------------------- */
+
+@import 'helper-classes';
+
 // ==========================================================================
 // Testing File
 // ==========================================================================
@@ -2380,13 +2385,16 @@ this was being called in queue after testing adding more unecessary complexity f
 @import 'testing';
 
 
-// needs to be figured out, hacking quick fixes.
+// full width template for pages
 
-.page-id-862 {
-  .sidebar {
-    display: none;
-  }
+.page-fullwidth {
   .content {
     width: 100%;
+  }
+  .entry-content {
+    max-width: none;
+  }
+  .entry-header {
+    max-width: none;
   }
 }
