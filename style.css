@@ -2374,10 +2374,7 @@ this was being called in queue after testing adding more unecessary complexity f
   margin-bottom: 40px;
 }
 
-/* scott testing, remove bckground from text*/
 .front-page-1 .widget-wrap {
-  /*background: rgba(0,0,0, 0.7);*/
-  /*padding: 1em;*/
   float: left;
 }
 
@@ -2404,9 +2401,11 @@ this was being called in queue after testing adding more unecessary complexity f
   text-transform: none;
 }
 
-.front-page-1 p {
-  font-size: 24px;
-  font-size: 2.4rem;
+@media (min-width: 600px) {
+  .front-page-1 .textwidget {
+    font-size: 40px;
+    font-size: 4rem;
+  }
 }
 
 .front-page-1 p:last-child {
@@ -2544,6 +2543,7 @@ this was being called in queue after testing adding more unecessary complexity f
 
 .front-page-2 .enews-widget {
   text-align: center;
+  color: #f1f1f1;
 }
 
 /* Front Page 3
@@ -2715,4 +2715,10 @@ this was being called in queue after testing adding more unecessary complexity f
   .site-title a {
     display: block;
   }
+}
+.page-id-862 .sidebar {
+  display: none;
+}
+.page-id-862 .content {
+  width: 100%;
 }
