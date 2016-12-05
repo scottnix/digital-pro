@@ -1509,18 +1509,6 @@ a[rel~="attachment"]:hover,
   margin-left: 0;
 }
 
-/* Secondary Navigation
---------------------------------------------- */
-.nav-secondary {
-  margin-top: 10px;
-}
-
-.nav-secondary .genesis-nav-menu a {
-  padding: 0;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 /* Responsive Navigation
 --------------------------------------------- */
 .sub-menu-toggle,
@@ -1961,6 +1949,7 @@ p.form-submit,
 .site-footer p {
   border-bottom-width: 0;
   color: #232525;
+  line-height: 1;
 }
 
 .site-footer a:focus,
@@ -1970,9 +1959,50 @@ p.form-submit,
 }
 
 .site-footer p {
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 12px;
+  font-size: 1.2rem;
   margin-bottom: 0;
+}
+@media (min-width: 800px) {
+  .site-footer p {
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding: 0 10px 0 0;
+  }
+}
+
+/* Secondary Navigation in Footer
+--------------------------------------------- */
+.nav-secondary {
+  display: block !important;
+}
+@media (min-width: 800px) {
+  .nav-secondary {
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+}
+
+.nav-secondary li.menu-item {
+  display: inline-block !important;
+  float: left;
+}
+@media (min-width: 800px) {
+  .nav-secondary li.menu-item {
+    display: block;
+  }
+}
+
+.nav-secondary a {
+  font-family: 'Lora', sans-serif;
+  letter-spacing: 0;
+  padding: 0 10px 0 9px;
+  font-weight: 400;
+  border-left: 1px solid #232525;
+  margin: 0;
+  text-transform: none;
 }
 
 /* Fadeup Effect
@@ -2698,15 +2728,16 @@ this was being called in queue after testing adding more unecessary complexity f
 
 /* Helper Classes
 ---------------------------------------------------------------------------------------------------- */
-.author-box:before, .nav-secondary:before, .entry:before,
+.author-box:before, .entry:before, .site-footer:before, .nav-secondary:before,
 .author-box:after,
-.nav-secondary:after,
-.entry:after {
+.entry:after,
+.site-footer:after,
+.nav-secondary:after {
   content: " ";
   display: table;
 }
 
-.author-box:after, .nav-secondary:after, .entry:after {
+.author-box:after, .entry:after, .site-footer:after, .nav-secondary:after {
   clear: both;
 }
 

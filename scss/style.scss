@@ -90,6 +90,12 @@
   }
 }
 
+// rem font sizing mixin - https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
 /* Normalize.css
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1477,19 +1483,7 @@ a[rel~="attachment"]:hover,
   margin-left: 0;
 }
 
-/* Secondary Navigation
---------------------------------------------- */
 
-.nav-secondary {
-  margin-top: 10px;
-  @extend %clearfix;
-}
-
-.nav-secondary .genesis-nav-menu a {
-  padding: 0;
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
 /* Responsive Navigation
 --------------------------------------------- */
@@ -1944,12 +1938,14 @@ p.form-submit,
 .site-footer {
   padding: 28px;
   text-align: center;
+  @extend %clearfix;
 }
 
 .site-footer a,
 .site-footer p {
   border-bottom-width: 0;
   color: #232525;
+  line-height: 1;
 }
 
 .site-footer a:focus,
@@ -1959,9 +1955,49 @@ p.form-submit,
 }
 
 .site-footer p {
-  font-size: 14px;
-  font-size: 1.4rem;
+  @include font-size(1.2);
   margin-bottom: 0;
+
+  @include breakpoint(800px) {
+      float: left;
+      width: 50%;
+      text-align: right;
+      padding: 0 10px 0 0;
+  }
+}
+
+.creds {
+
+}
+
+/* Secondary Navigation in Footer
+--------------------------------------------- */
+
+.nav-secondary {
+  display: block !important; // get back to this, first menu grabs these classes too
+  @extend %clearfix;
+
+  @include breakpoint(800px) {
+     float: left;
+     width: 50%;
+     text-align: left;
+  }
+}
+.nav-secondary li.menu-item {
+  display: inline-block !important;
+  float: left;
+    @include breakpoint(800px) {
+        display: block;
+    }
+}
+.nav-secondary a {
+  font-family: 'Lora', sans-serif;
+  letter-spacing: 0;
+  padding: 0 10px 0 9px;
+  font-weight: 400;
+  border-left: 1px solid #232525;
+  margin: 0;
+  text-transform: none;
 }
 
 
@@ -2398,3 +2434,5 @@ this was being called in queue after testing adding more unecessary complexity f
     max-width: none;
   }
 }
+
+

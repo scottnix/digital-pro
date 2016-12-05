@@ -276,9 +276,7 @@ genesis_register_sidebar( array(
 
  //Change Genesis Footer Credit Copyright line
  function childtheme_footer_copyright_text () {
-  echo '<div class="creds"><p>Copyright &copy;' . date('Y') . ' | ';
-  echo '<span class="legal"><a href="http://dustintouchton.de/impressum/">Impressum</a></span>';
-  echo '</p></div>';
+  echo '<div class="creds"><p>Copyright &copy;' . date('Y') . '</p></div>';
  }
  add_filter( 'genesis_footer_creds_text', 'childtheme_footer_copyright_text' );
 
