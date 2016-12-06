@@ -1,0 +1,65 @@
+.widget {
+  word-wrap: break-word;
+}
+
+.widget ol > li {
+  padding-left: 20px;
+  list-style-position: inside;
+  list-style-type: decimal;
+  text-indent: -20px;
+}
+
+.widget li li {
+  margin: 0 0 0 30px
+;  padding: 0;
+  border: 0;
+}
+
+.widget_calendar table {
+  width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+  text-align: center;
+}
+
+/* Featured Content
+--------------------------------------------- */
+
+.featured-content a {
+  border-width: 0;
+}
+
+.featured-content.widget .entry {
+  padding-bottom: 60px;
+}
+
+.featured-content.widget .entry:last-child {
+  border-bottom-width: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.featured-content .entry p {
+  @include font-size(1.8);
+}
+
+.featured-content p.entry-meta {
+  font-family: "Poppins", sans-serif;
+  @include font-size(1);
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.featuredpost .entry-title,
+.featured-content.widget .entry-title {
+  @include font-size(2.4);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.featured-content .more-link {
+  border-width: 1px;
+}
