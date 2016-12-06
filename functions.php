@@ -289,3 +289,12 @@ add_filter( 'get_the_content_more_link', 'sp_read_more_link' );
 function sp_read_more_link() {
   return '<a class="more-link" href="' . get_permalink() . '">Weiterlesen</a>';
 }
+
+
+//* Remove Genesis in-post SEO Settings
+// remove SEO Box in Admin on Posts screen, letting a plugin do this.
+remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
+
+//* Remove Genesis SEO Settings menu link
+// remove SEO Options in Admin Menu
+remove_theme_support( 'genesis-seo-settings-menu' );
