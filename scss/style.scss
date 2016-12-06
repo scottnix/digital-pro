@@ -21,7 +21,6 @@
 // - HTML5 Reset
 //   - Baseline Normalize
 //   - Box Sizing
-//   - Float Clearing
 // - Defaults
 //   - Typographical Elements
 //   - Headings
@@ -31,6 +30,7 @@
 //   - Column Classes
 //   - Tables
 //   - Screen Reader Text
+//   - Skip Links
 // - Structure and Layout
 //   - Site Container
 //   - Site Inner
@@ -46,7 +46,6 @@
 //   - Genesis eNews Extended
 //   - Genesis Simple Share
 //   - Jetpack
-// - Skip Links
 // - Site Header
 //   - Site Title and Description
 // - Site Navigation
@@ -122,7 +121,6 @@ g--------------------------------------------- */
 .nav-primary:before,
 .pagination:before,
 .site-container:before,
-.site-footer:before,
 .site-header:before,
 .site-inner:before,
 .widget:before,
@@ -138,7 +136,6 @@ g--------------------------------------------- */
 .nav-primary:after,
 .pagination:after,
 .site-container:after,
-.site-footer:after,
 .site-header:after,
 .site-inner:after,
 .widget:after,
@@ -156,23 +153,22 @@ g--------------------------------------------- */
 --------------------------------------------- */
 
 html {
-    font-size: 62.5%; /* 10px browser default */
+  font-size: 62.5%; /* 10px browser default */
 }
 
 /* Chrome fix */
 body > div {
-    font-size: 1.9rem;
+  font-size: 1.9rem;
 }
 
 body {
+  margin: 0;
   background-color: #fff;
-  color: #5b5e5e;
   font-family: 'Lora', sans-serif;
-  font-size: 19px;
-  font-size: 1.9rem;
+  @include font-size(1.9);
+  color: #5b5e5e;
   font-weight: 400;
   line-height: 2;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -227,8 +223,7 @@ strong {
 }
 
 small {
-  font-size: 14px;
-  font-size: 1.4rem;
+  @include font-size(1.4);
 }
 
 blockquote,
@@ -244,22 +239,21 @@ blockquote {
 
 blockquote::before {
   content: "\201C";
-  display: block;
-  font-size: 30px;
-  font-size: 3rem;
-  height: 0;
-  left: -20px;
   position: relative;
-  top: -10px;
+  top: -15px;
+  left: -20px;
+  display: block;
+  height: 0;
+  @include font-size(4);
 }
 
 hr {
+  margin: 0 0 40px;
+  padding-top: 20px;
   border: 0;
   border-collapse: collapse;
   border-bottom: 1px solid #ddd;
   clear: left;
-  margin: 0 0 40px;
-  padding-top: 20px;
 }
 
 
@@ -272,57 +266,41 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0 0 20px;
   color: #232525;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 20px;
 }
 
 h1 {
-  font-size: 36px;
-  font-size: 3.6rem;
+  @include font-size(3.6);
 }
 
 h2 {
-  font-size: 30px;
-  font-size: 3rem;
+  @include font-size(3);
 }
 
 h3 {
-  font-size: 28px;
-  font-size: 2.8rem;
+  @include font-size(2.8);
 }
 
 .comment-respond h3,
 .entry-comments h3 {
-  font-size: 36px;
-  font-size: 3.6rem;
-  letter-spacing: -2px;
-  margin-bottom: 60px;
   margin-top: 100px;
+  margin-bottom: 60px;
 }
 
 h4 {
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-
-.entry-content h4 {
-  font-size: 20px;
-  font-size: 2rem;
-  letter-spacing: -1px;
-  margin-top: 60px;
+  @include font-size(2.4);
 }
 
 h5 {
-  font-size: 20px;
-  font-size: 2rem;
+  @include font-size(2);
 }
 
 h6 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  @include font-size(1.8);
 }
 
 /* Objects
@@ -347,9 +325,9 @@ img.entry-image {
 }
 
 .full-width-content img.pull {
+  max-width: 800px;
   margin-left: -70px;
   margin-right: -70px;
-  max-width: 800px;
 }
 
 /* Gallery
@@ -429,21 +407,19 @@ img.entry-image {
 input,
 select,
 textarea {
+  width: 100%;
+  padding: 20px;
   background-color: #f5f5f5;
   border: 1px solid #f5f5f5;
+  @include font-size(1.8);
   color: #5b5e5e;
-  font-family: 'Neuton', serif; // wtf is this font doing here
-  font-size: 18px;
-  font-size: 1.8rem;
   font-weight: 300;
-  padding: 20px;
-  width: 100%;
 }
 
 input[type="number"] {
+  padding: 7px;
   background-color: #fff;
   border: 1px solid #5b5e5e;
-  padding: 7px;
 }
 
 .footer-widgets input,
@@ -478,22 +454,20 @@ input[type="submit"],
 .button,
 .entry-content a.button,
 .textwidget a.button {
+  width: auto;
+  padding: 20px 30px;
   background-color: #e85555;
   border-radius: 50px;
   border: none;
-  color: #fff;
-  cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
+  @include font-size(1.4);
   font-weight: 500;
   letter-spacing: 0.5px;
-  padding: 20px 30px;
+  color: #fff;
   text-transform: uppercase;
   white-space: normal;
-  width: auto;
+  cursor: pointer;
 }
-
 
 a.button.small,
 button.small,
@@ -502,31 +476,13 @@ input[type="reset"].small,
 input[type="submit"].small,
 .entry-content a.button.small,
 .textwidget a.button.small {
-/*  font-size: 12px;
-  font-size: 1.2rem;*/
   padding: 12px 20px;
 }
-
-/* scott testing
-  making the redmore a little prettier
-a.button.small,
-button.small,
-input[type="button"].small,
-input[type="reset"].small,
-input[type="submit"].small,
-.entry-content a.button.small,
-.textwidget a.button.small {
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding: 12px 20px;
-}*/
 
 input[type="submit"],
 .content input[type="submit"] {
-/*  font-size: 16px;
-  font-size: 1.6rem;*/
-  padding: 20px 25px;
   width: 100%;
+  padding: 20px 25px;
 }
 
 a.more-link {
@@ -534,20 +490,6 @@ a.more-link {
   font-family: 'Poppins', sans-serif;
 }
 
-/* scott testing
-
-a.more-link {
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}*/
-
-/* scott added more link */
 a.more-link:hover,
 a.more-link:focus,
 button:hover,
@@ -564,15 +506,11 @@ input:focus[type="submit"],
 .entry-content a.button:hover,
 .textwidget a.button:focus,
 .textwidget a.button:hover {
-
-  /* scott change background color from black to green*/
-  /*background-color: #232525;*/
   background-color: #8cc63f;
   border: none;
   color: #fff;
   text-decoration: none;
 }
-
 
 .footer-widgets button:focus,
 .footer-widgets button:hover,
@@ -679,11 +617,11 @@ input[type="search"]::-webkit-search-results-button {
 --------------------------------------------- */
 
 table {
+  width: 100%;
+  margin-bottom: 40px;
   border-collapse: collapse;
   border-spacing: 0;
   line-height: 2;
-  margin-bottom: 40px;
-  width: 100%;
 }
 
 tbody {
@@ -696,8 +634,8 @@ th {
 }
 
 td {
-  border-top: 1px solid #ddd;
   padding: 6px 0;
+  border-top: 1px solid #ddd;
 }
 
 th {
@@ -724,16 +662,15 @@ th {
 .screen-reader-shortcut:focus,
 .screen-reader-text:focus,
 .widget_search input[type="submit"]:focus  {
-  border: 1px solid #5b5e5e;
-  clip: auto !important;
   display: block;
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-weight: 700;
+  width: auto;
   height: auto;
   padding: 20px;
+  border: 1px solid #5b5e5e;
+  @include font-size(1.8);
+  font-weight: 700;
   text-decoration: none;
-  width: auto;
+  clip: auto !important;
   z-index: 100000; /* Above WP toolbar. */
 }
 
@@ -741,6 +678,23 @@ th {
     position: relative;
 }
 
+/* Skip Links
+--------------------------------------------- */
+
+.genesis-skip-link {
+  margin: 0;
+}
+
+.genesis-skip-link li {
+  height: 0;
+  width: 0;
+  list-style: none;
+}
+
+:focus {
+  color: #232525;
+  outline: #ddd solid 1px;
+}
 
 /* Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -749,39 +703,15 @@ th {
 --------------------------------------------- */
 
 .site-container {
-  -webkit-animation: fadein 1s;
-       -moz-animation: fadein 1s;
-        -ms-animation: fadein 1s;
-         -o-animation: fadein 1s;
-            animation: fadein 1s;
+  animation: fadein 1s;
 }
 
 .digital-landing .site-container {
-  margin: 0 auto;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@-o-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
@@ -790,11 +720,11 @@ th {
 --------------------------------------------- */
 
 .site-inner {
-  background-color: #fff;
   clear: both;
+  max-width: 1280px;
   margin: 90px auto 0;
   padding: 10% 40px;
-  max-width: 1280px;
+  background-color: #fff;
 }
 
 .digital-landing .site-inner,
@@ -817,9 +747,9 @@ th {
 .after-entry .avatar {
   float: right;
   height: 180px;
+  width: 180px;
   margin-bottom: 30px;
   margin-left: 30px;
-  width: 180px;
 }
 
 .alignleft .avatar,
@@ -835,14 +765,14 @@ th {
   display: inline-block;
   float: none;
   height: 80px;
-  margin: 0 auto 20px;
   width: 80px;
+  margin: 0 auto 20px;
 }
 
 .comment .avatar {
   height: 60px;
-  margin: 0 16px 24px 0;
   width: 60px;
+  margin: 0 16px 24px 0;
 }
 
 /* Genesis
@@ -850,9 +780,9 @@ th {
 
 .archive-description,
 .author-box {
-  border-bottom: 1px solid #eee;
   margin-bottom: 10%;
   padding-bottom: 10%;
+  border-bottom: 1px solid #eee;
   text-align: center;
 }
 
@@ -861,29 +791,27 @@ th {
 .author-box,
 .author-box p,
 .author-box .author-box-title {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 660px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .breadcrumb {
-  border-bottom: 1px solid #eee;
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin: 0 auto 10%;
   max-width: 660px;
+  margin: 0 auto 10%;
   padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  @include font-size(1.6);
 }
 
 .author-box {
-  font-size: 18px;
-  font-size: 1.8rem;
+  @include font-size(1.8);
   @extend %clearfix;
 }
 
 .single .author-box {
-  border-top: 1px solid #eee;
   padding-top: 10%;
+  border-top: 1px solid #eee;
 }
 
 .archive-description p:last-child,
@@ -903,13 +831,13 @@ th {
 }
 
 .search-form input[type="submit"] {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* Titles
@@ -917,45 +845,20 @@ th {
 
 .archive-title,
 .author-box-title {
-  font-size: 30px;
-  font-size: 3rem;
-  letter-spacing: -1px;
   margin-bottom: 10px;
+  @include font-size(3);
+  letter-spacing: -1px;
 }
 
 .search .archive-title {
   margin-bottom: 0;
 }
 
-/*.entry-title,
-.page.page-template-page_blog .entry-title {
-  font-size: 36px;
-  font-size: 3.6rem;
-  letter-spacing: -2px;
-  word-wrap: break-word;
-}
-
-.page .entry-title,
-.single .entry-title {
-  font-size: 48px;
-  font-size: 4.8rem;
-  font-weight: 700;
-  letter-spacing: -3px;
-}*/
-
-/* scott */
-
 .entry-title {
   font-size: 48px;
   font-size: 4.8rem;
   font-weight: 700;
   letter-spacing: -3px;
-}
-
-.error404 .entry-title {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 660px;
 }
 
 .content .entry-title a,
@@ -971,10 +874,9 @@ th {
 }
 
 .widget-title {
-  font-size: 22px;
-  font-size: 2.2rem;
-  letter-spacing: -1px;
   margin-bottom: 20px;
+  @include font-size(2.2);
+  letter-spacing: -1px;
   text-transform: uppercase;
 }
 
@@ -1086,221 +988,14 @@ a[rel~="attachment"]:hover,
 /* Widgets
 ---------------------------------------------------------------------------------------------------- */
 
-.widget {
-  word-wrap: break-word;
-}
-
-.widget ol > li {
-  list-style-position: inside;
-  list-style-type: decimal;
-  padding-left: 20px;
-  text-indent: -20px;
-}
-
-.widget li li {
-  border: 0;
-  margin: 0 0 0 30px;
-  padding: 0;
-}
-
-.widget_calendar table {
-  width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-  text-align: center;
-}
-
-/* Featured Content
---------------------------------------------- */
-
-.featured-content a {
-  border-width: 0;
-}
-
-.featured-content.widget .entry {
-  padding-bottom: 60px;
-}
-
-.featured-content.widget .entry:last-child {
-  border-bottom-width: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.featured-content .entry p {
-  font-size: 18px;
-  font-size: 1.8rem;
-}
-
-.featured-content p.entry-meta {
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.featuredpost .entry-title,
-.featured-content.widget .entry-title {
-  font-size: 24px;
-  font-size: 2.4rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.featured-content .more-link {
-  border-width: 1px;
-}
-
+@import 'widgets';
 
 /* Plugins
 ---------------------------------------------------------------------------------------------------- */
 
-/* Genesis eNews Extended
---------------------------------------------- */
+@import 'plugins';
 
-.enews-widget ::-moz-placeholder {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
 
-.enews-widget ::-webkit-input-placeholder {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.enews-widget input {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.sidebar .enews-widget input {
-  margin-bottom: 10px;
-}
-
-.enews-widget input[type="submit"] {
-  font-size: 16px;
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin-bottom: 0;
-}
-
-.enews-widget p {
-  margin-bottom: 20px;
-}
-
-.enews form + p {
-  line-height: 1.5;
-  margin-top: 30px;
-}
-
-/* Genesis Simple Share
---------------------------------------------- */
-
-.content .share-after {
-  margin-bottom: 20px;
-}
-
-.content a.count,
-.content a.count:hover,
-.content a.count:focus,
-.content a.share,
-.content a.share:hover,
-.content a.share:focus {
-  border: none;
-  font-weight: 400;
-}
-
-.content .share-filled .share {
-  border-radius: 0;
-}
-
-.content .share-filled .count {
-  border-radius: 0;
-}
-
-.content .share-filled .facebook .count,
-.content .share-filled .facebook .count:hover,
-.content .share-filled .googlePlus .count,
-.content .share-filled .googlePlus .count:hover,
-.content .share-filled .linkedin .count,
-.content .share-filled .linkedin .count:hover,
-.content .share-filled .pinterest .count,
-.content .share-filled .pinterest .count:hover,
-.content .share-filled .stumbleupon .count,
-.content .share-filled .stumbleupon .count:hover,
-.content .share-filled .twitter .count,
-.content .share-filled .twitter .count:hover {
-  color: #5b5e5e;
-  border: 1px solid #5b5e5e;
-}
-
-.content .share-filled .facebook .share,
-.content .share-filled .facebook:hover .count,
-.content .share-filled .googlePlus .share,
-.content .share-filled .googlePlus:hover .count,
-.content .share-filled .linkedin .share,
-.content .share-filled .linkedin:hover .count,
-.content .share-filled .pinterest .share,
-.content .share-filled .pinterest:hover .count,
-.content .share-filled .stumbleupon .share,
-.content .share-filled .stumbleupon:hover .count,
-.content .share-filled .twitter .share,
-.content .share-filled .twitter:hover .count {
-  background: #5b5e5e !important;
-}
-
-.content .share-filled .facebook:hover .count,
-.content .share-filled .googlePlus:hover .count,
-.content .share-filled .linkedin:hover .count,
-.content .share-filled .pinterest:hover .count,
-.content .share-filled .stumbleupon:hover .count,
-.content .share-filled .twitter:hover .count {
-  color: #fff;
-}
-
-/* Jetpack
---------------------------------------------- */
-
-#wpstats {
-  display: none;
-}
-
-// removed skip links - reference skip-links comment in functions.php, needs to be looked into later.
-// /* Skip Links
-// ---------------------------------------------------------------------------------------------------- */
-// .genesis-skip-link {
-//   margin: 0;
-// }
-
-// .genesis-skip-link li {
-//   height: 0;
-//   width: 0;
-//   list-style: none;
-// }
-
-// /* Display outline on focus */
-// :focus {
-//   color: #232525;
-//   outline: #ddd solid 1px;
-// }
 
 
 /* Site Header
@@ -1643,14 +1338,6 @@ p.entry-meta {
 
 .after-entry .widget {
   margin-bottom: 40px;
-}
-
-.after-entry .widget-title {
-  font-size: 24px;
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
 }
 
 .after-entry p:last-child,
@@ -2037,12 +1724,7 @@ p.form-submit,
 @media only screen and (min-width: 801px) {
 
   .footer-widgets .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
@@ -2299,15 +1981,6 @@ p.form-submit,
 
 @media only screen and (max-width: 600px) {
 
-  /*  .page .entry-title,
-    .single .entry-title {
-      font-size: 36px;
-      font-size: 3.6rem;
-      letter-spacing: -2px;
-    }*/
-
-  /* scott */
-
   .entry-title {
     font-size: 36px;
     font-size: 3.6rem;
@@ -2344,26 +2017,12 @@ p.form-submit,
     margin-left: 0;
     width: 100%;
   }
-
 }
-
-
-
-/*// scott, new front page  - no point in having a seperate CSS requset for this., minor detail.
-Makes it easier to add a testing file for more major changes, has to do with WP stacking order of css files,
-this was being called in queue after testing adding more unecessary complexity for testing. */
 
 /* Front Page
 ---------------------------------------------------------------------------------------------------- */
 
-.front-page .entry-header {
-  margin-bottom: 0;
-}
-
-.front-page p:last-child,
-.front-page .widget:last-child {
-  margin-bottom: 0;
-}
+@import 'front-page';
 
 /* Flexible Widgets
 --------------------------------------------- */
@@ -2402,12 +2061,6 @@ this was being called in queue after testing adding more unecessary complexity f
 .flexible-widgets.widget-fourths .widget:nth-child(4n+2) {
   clear: left;
 }
-
-// ==========================================================================
-// Themes custom front page template
-// ==========================================================================
-
-@import 'front-page';
 
 /* Helper Classes
 ---------------------------------------------------------------------------------------------------- */

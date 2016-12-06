@@ -212,7 +212,6 @@ g--------------------------------------------- */
 .nav-primary:before,
 .pagination:before,
 .site-container:before,
-.site-footer:before,
 .site-header:before,
 .site-inner:before,
 .widget:before,
@@ -227,7 +226,6 @@ g--------------------------------------------- */
 .nav-primary:after,
 .pagination:after,
 .site-container:after,
-.site-footer:after,
 .site-header:after,
 .site-inner:after,
 .widget:after,
@@ -252,14 +250,14 @@ body > div {
 }
 
 body {
+  margin: 0;
   background-color: #fff;
-  color: #5b5e5e;
   font-family: 'Lora', sans-serif;
   font-size: 19px;
   font-size: 1.9rem;
+  color: #5b5e5e;
   font-weight: 400;
   line-height: 2;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -336,22 +334,22 @@ blockquote {
 
 blockquote::before {
   content: "\201C";
-  display: block;
-  font-size: 30px;
-  font-size: 3rem;
-  height: 0;
-  left: -20px;
   position: relative;
-  top: -10px;
+  top: -15px;
+  left: -20px;
+  display: block;
+  height: 0;
+  font-size: 40px;
+  font-size: 4rem;
 }
 
 hr {
+  margin: 0 0 40px;
+  padding-top: 20px;
   border: 0;
   border-collapse: collapse;
   border-bottom: 1px solid #ddd;
   clear: left;
-  margin: 0 0 40px;
-  padding-top: 20px;
 }
 
 /* Headings
@@ -362,11 +360,11 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0 0 20px;
   color: #232525;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 20px;
 }
 
 h1 {
@@ -386,23 +384,13 @@ h3 {
 
 .comment-respond h3,
 .entry-comments h3 {
-  font-size: 36px;
-  font-size: 3.6rem;
-  letter-spacing: -2px;
-  margin-bottom: 60px;
   margin-top: 100px;
+  margin-bottom: 60px;
 }
 
 h4 {
   font-size: 24px;
   font-size: 2.4rem;
-}
-
-.entry-content h4 {
-  font-size: 20px;
-  font-size: 2rem;
-  letter-spacing: -1px;
-  margin-top: 60px;
 }
 
 h5 {
@@ -436,9 +424,9 @@ img.entry-image {
 }
 
 .full-width-content img.pull {
+  max-width: 800px;
   margin-left: -70px;
   margin-right: -70px;
-  max-width: 800px;
 }
 
 /* Gallery
@@ -516,21 +504,20 @@ img.entry-image {
 input,
 select,
 textarea {
+  width: 100%;
+  padding: 20px;
   background-color: #f5f5f5;
   border: 1px solid #f5f5f5;
-  color: #5b5e5e;
-  font-family: 'Neuton', serif;
   font-size: 18px;
   font-size: 1.8rem;
+  color: #5b5e5e;
   font-weight: 300;
-  padding: 20px;
-  width: 100%;
 }
 
 input[type="number"] {
+  padding: 7px;
   background-color: #fff;
   border: 1px solid #5b5e5e;
-  padding: 7px;
 }
 
 .footer-widgets input,
@@ -583,20 +570,20 @@ input[type="submit"],
 .button,
 .entry-content a.button,
 .textwidget a.button {
+  width: auto;
+  padding: 20px 30px;
   background-color: #e85555;
   border-radius: 50px;
   border: none;
-  color: #fff;
-  cursor: pointer;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: 0.5px;
-  padding: 20px 30px;
+  color: #fff;
   text-transform: uppercase;
   white-space: normal;
-  width: auto;
+  cursor: pointer;
 }
 
 a.button.small,
@@ -606,30 +593,13 @@ input[type="reset"].small,
 input[type="submit"].small,
 .entry-content a.button.small,
 .textwidget a.button.small {
-  /*  font-size: 12px;
-    font-size: 1.2rem;*/
   padding: 12px 20px;
 }
 
-/* scott testing
-  making the redmore a little prettier
-a.button.small,
-button.small,
-input[type="button"].small,
-input[type="reset"].small,
-input[type="submit"].small,
-.entry-content a.button.small,
-.textwidget a.button.small {
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding: 12px 20px;
-}*/
 input[type="submit"],
 .content input[type="submit"] {
-  /*  font-size: 16px;
-    font-size: 1.6rem;*/
-  padding: 20px 25px;
   width: 100%;
+  padding: 20px 25px;
 }
 
 a.more-link {
@@ -637,19 +607,6 @@ a.more-link {
   font-family: 'Poppins', sans-serif;
 }
 
-/* scott testing
-
-a.more-link {
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}*/
-/* scott added more link */
 a.more-link:hover,
 a.more-link:focus,
 button:hover,
@@ -666,8 +623,6 @@ input:focus[type="submit"],
 .entry-content a.button:hover,
 .textwidget a.button:focus,
 .textwidget a.button:hover {
-  /* scott change background color from black to green*/
-  /*background-color: #232525;*/
   background-color: #8cc63f;
   border: none;
   color: #fff;
@@ -776,11 +731,11 @@ input[type="search"]::-webkit-search-results-button {
 /* Tables
 --------------------------------------------- */
 table {
+  width: 100%;
+  margin-bottom: 40px;
   border-collapse: collapse;
   border-spacing: 0;
   line-height: 2;
-  margin-bottom: 40px;
-  width: 100%;
 }
 
 tbody {
@@ -793,8 +748,8 @@ th {
 }
 
 td {
-  border-top: 1px solid #ddd;
   padding: 6px 0;
+  border-top: 1px solid #ddd;
 }
 
 th {
@@ -820,22 +775,39 @@ th {
 .screen-reader-shortcut:focus,
 .screen-reader-text:focus,
 .widget_search input[type="submit"]:focus {
-  border: 1px solid #5b5e5e;
-  clip: auto !important;
   display: block;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #5b5e5e;
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 700;
-  height: auto;
-  padding: 20px;
   text-decoration: none;
-  width: auto;
+  clip: auto !important;
   z-index: 100000;
   /* Above WP toolbar. */
 }
 
 .more-link {
   position: relative;
+}
+
+/* Skip Links
+--------------------------------------------- */
+.genesis-skip-link {
+  margin: 0;
+}
+
+.genesis-skip-link li {
+  height: 0;
+  width: 0;
+  list-style: none;
+}
+
+:focus {
+  color: #232525;
+  outline: #ddd solid 1px;
 }
 
 /* Structure and Layout
@@ -847,8 +819,8 @@ th {
 }
 
 .digital-landing .site-container {
-  margin: 0 auto;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 @keyframes fadein {
@@ -862,11 +834,11 @@ th {
 /* Site Inner
 --------------------------------------------- */
 .site-inner {
-  background-color: #fff;
   clear: both;
+  max-width: 1280px;
   margin: 90px auto 0;
   padding: 10% 40px;
-  max-width: 1280px;
+  background-color: #fff;
 }
 
 .digital-landing .site-inner,
@@ -886,9 +858,9 @@ th {
 .after-entry .avatar {
   float: right;
   height: 180px;
+  width: 180px;
   margin-bottom: 30px;
   margin-left: 30px;
-  width: 180px;
 }
 
 .alignleft .avatar,
@@ -904,23 +876,23 @@ th {
   display: inline-block;
   float: none;
   height: 80px;
-  margin: 0 auto 20px;
   width: 80px;
+  margin: 0 auto 20px;
 }
 
 .comment .avatar {
   height: 60px;
-  margin: 0 16px 24px 0;
   width: 60px;
+  margin: 0 16px 24px 0;
 }
 
 /* Genesis
 --------------------------------------------- */
 .archive-description,
 .author-box {
-  border-bottom: 1px solid #eee;
   margin-bottom: 10%;
   padding-bottom: 10%;
+  border-bottom: 1px solid #eee;
   text-align: center;
 }
 
@@ -929,18 +901,18 @@ th {
 .author-box,
 .author-box p,
 .author-box .author-box-title {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 660px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .breadcrumb {
+  max-width: 660px;
+  margin: 0 auto 10%;
+  padding-bottom: 10px;
   border-bottom: 1px solid #eee;
   font-size: 16px;
   font-size: 1.6rem;
-  margin: 0 auto 10%;
-  max-width: 660px;
-  padding-bottom: 10px;
 }
 
 .author-box {
@@ -949,8 +921,8 @@ th {
 }
 
 .single .author-box {
-  border-top: 1px solid #eee;
   padding-top: 10%;
+  border-top: 1px solid #eee;
 }
 
 .archive-description p:last-child,
@@ -969,56 +941,34 @@ th {
 }
 
 .search-form input[type="submit"] {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* Titles
 --------------------------------------------- */
 .archive-title,
 .author-box-title {
+  margin-bottom: 10px;
   font-size: 30px;
   font-size: 3rem;
   letter-spacing: -1px;
-  margin-bottom: 10px;
 }
 
 .search .archive-title {
   margin-bottom: 0;
 }
 
-/*.entry-title,
-.page.page-template-page_blog .entry-title {
-  font-size: 36px;
-  font-size: 3.6rem;
-  letter-spacing: -2px;
-  word-wrap: break-word;
-}
-
-.page .entry-title,
-.single .entry-title {
-  font-size: 48px;
-  font-size: 4.8rem;
-  font-weight: 700;
-  letter-spacing: -3px;
-}*/
-/* scott */
 .entry-title {
   font-size: 48px;
   font-size: 4.8rem;
   font-weight: 700;
   letter-spacing: -3px;
-}
-
-.error404 .entry-title {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 660px;
 }
 
 .content .entry-title a,
@@ -1034,10 +984,10 @@ th {
 }
 
 .widget-title {
+  margin-bottom: 20px;
   font-size: 22px;
   font-size: 2.2rem;
   letter-spacing: -1px;
-  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -1148,16 +1098,16 @@ a[rel~="attachment"]:hover,
 }
 
 .widget ol > li {
+  padding-left: 20px;
   list-style-position: inside;
   list-style-type: decimal;
-  padding-left: 20px;
   text-indent: -20px;
 }
 
 .widget li li {
-  border: 0;
   margin: 0 0 0 30px;
   padding: 0;
+  border: 0;
 }
 
 .widget_calendar table {
@@ -1215,6 +1165,14 @@ a[rel~="attachment"]:hover,
 ---------------------------------------------------------------------------------------------------- */
 /* Genesis eNews Extended
 --------------------------------------------- */
+.enews-widget ::-webkit-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 .enews-widget ::-moz-placeholder {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
@@ -1223,8 +1181,15 @@ a[rel~="attachment"]:hover,
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-
-.enews-widget ::-webkit-input-placeholder {
+.enews-widget :-ms-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.enews-widget ::placeholder {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1658,14 +1623,6 @@ p.entry-meta {
   margin-bottom: 40px;
 }
 
-.after-entry .widget-title {
-  font-size: 24px;
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-}
-
 .after-entry p:last-child,
 .after-entry .widget:last-child {
   margin-bottom: 0;
@@ -2035,7 +1992,7 @@ p.form-submit,
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -2281,13 +2238,6 @@ p.form-submit,
   }
 }
 @media only screen and (max-width: 600px) {
-  /*  .page .entry-title,
-    .single .entry-title {
-      font-size: 36px;
-      font-size: 3.6rem;
-      letter-spacing: -2px;
-    }*/
-  /* scott */
   .entry-title {
     font-size: 36px;
     font-size: 3.6rem;
@@ -2325,11 +2275,10 @@ p.form-submit,
     width: 100%;
   }
 }
-/*// scott, new front page  - no point in having a seperate CSS requset for this., minor detail.
-Makes it easier to add a testing file for more major changes, has to do with WP stacking order of css files,
-this was being called in queue after testing adding more unecessary complexity for testing. */
 /* Front Page
 ---------------------------------------------------------------------------------------------------- */
+/* General
+--------------------------------------------- */
 .front-page .entry-header {
   margin-bottom: 0;
 }
@@ -2337,43 +2286,6 @@ this was being called in queue after testing adding more unecessary complexity f
 .front-page p:last-child,
 .front-page .widget:last-child {
   margin-bottom: 0;
-}
-
-/* Flexible Widgets
---------------------------------------------- */
-.flexible-widgets .widget {
-  float: left;
-  margin-bottom: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.flexible-widgets .widget:first-child {
-  margin-bottom: 40px;
-}
-
-.flexible-widgets.widget-full .widget,
-.flexible-widgets.widget-area .widget:nth-of-type(1),
-.flexible-widgets.widget-halves.uneven .widget:last-of-type {
-  width: 100%;
-}
-
-.flexible-widgets.widget-fourths .widget {
-  width: 25%;
-}
-
-.flexible-widgets.widget-halves .widget {
-  width: 50%;
-}
-
-.flexible-widgets.widget-thirds .widget {
-  width: 33.33%;
-}
-
-.flexible-widgets.widget-halves .widget:nth-child(even),
-.flexible-widgets.widget-thirds .widget:nth-child(3n+2),
-.flexible-widgets.widget-fourths .widget:nth-child(4n+2) {
-  clear: left;
 }
 
 /* Front Page 1
@@ -2724,6 +2636,43 @@ this was being called in queue after testing adding more unecessary complexity f
 .front-page-2 .flexible-widgets.widget-full .widget-wrap, .front-page-2 .flexible-widgets.widget-halves.uneven .widget:last-of-type .widget-wrap {
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+/* Flexible Widgets
+--------------------------------------------- */
+.flexible-widgets .widget {
+  float: left;
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flexible-widgets .widget:first-child {
+  margin-bottom: 40px;
+}
+
+.flexible-widgets.widget-full .widget,
+.flexible-widgets.widget-area .widget:nth-of-type(1),
+.flexible-widgets.widget-halves.uneven .widget:last-of-type {
+  width: 100%;
+}
+
+.flexible-widgets.widget-fourths .widget {
+  width: 25%;
+}
+
+.flexible-widgets.widget-halves .widget {
+  width: 50%;
+}
+
+.flexible-widgets.widget-thirds .widget {
+  width: 33.33%;
+}
+
+.flexible-widgets.widget-halves .widget:nth-child(even),
+.flexible-widgets.widget-thirds .widget:nth-child(3n+2),
+.flexible-widgets.widget-fourths .widget:nth-child(4n+2) {
+  clear: left;
 }
 
 /* Helper Classes
