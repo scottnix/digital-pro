@@ -1,5 +1,9 @@
+/* Widgets
+--------------------------------------------- */
+
 .widget {
   word-wrap: break-word;
+  @extend %clearfix;
 }
 
 .widget ol > li {
@@ -22,6 +26,166 @@
 .widget_calendar td,
 .widget_calendar th {
   text-align: center;
+}
+
+/* Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets .wrap {
+  @include breakpoint(801px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+}
+
+.footer-widgets {
+  background-color: #232525;
+  border-top: 5px solid #fff;
+  clear: both;
+  @extend %clearfix;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+  padding: 8% 5%;
+
+  @include breakpoint(800px) {
+    float: left;
+    padding: 90px 4%;
+  }
+}
+
+.footer-widgets-1 {
+
+  @include breakpoint(800px) {
+    background-color: #e85555;
+    text-align: right;
+    width: 25%;
+  }
+}
+
+.footer-widgets-2 {
+
+  @include breakpoint(800px) {
+    text-align: left;
+    width: 39.8%;
+  }
+}
+
+.footer-widgets-3 {
+
+  @include breakpoint(800px) {
+    padding-left: 0;
+    text-align: left;
+    width: 35%;
+  }
+}
+
+.footer-widgets .widget {
+  margin-bottom: 30px;
+}
+
+.footer-widgets h1,
+.footer-widgets h2,
+.footer-widgets h3,
+.footer-widgets h4,
+.footer-widgets h5,
+.footer-widgets h6 {
+  color: #fff;
+}
+
+.footer-widgets p {
+  margin-bottom: 5px;
+}
+
+.footer-widgets p:last-child,
+.footer-widgets .widget:last-child {
+  margin-bottom: 0;
+}
+
+.footer-widgets .widget-title {
+  font-size: 22px;
+  font-size: 2.2rem;
+  letter-spacing: -1px;
+}
+
+.footer-widgets,
+.footer-widgets a,
+.footer-widgets p,
+.footer-widgets .widget-title {
+  color: #fff;
+}
+
+.footer-widgets a {
+  border-bottom-width: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-widgets a:focus,
+.footer-widgets a:hover {
+  color: #e85555;
+  text-decoration: underline;
+}
+
+.footer-widgets .footer-widgets-1 a:focus,
+.footer-widgets .footer-widgets-1 a:hover {
+  color: #232525;
+}
+
+.footer-widgets .simple-social-icons ul {
+  margin-top: 10px !important;
+}
+
+.footer-widgets .simple-social-icons ul li {
+  margin: 0px 12px 12px 0 !important;
+}
+
+.footer-widgets .simple-social-icons ul li a {
+  padding: 15px !important;
+}
+
+/* Flexible Widgets
+--------------------------------------------- */
+
+.flexible-widgets .widget {
+  float: left;
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flexible-widgets .widget:first-child {
+  margin-bottom: 40px;
+}
+
+.flexible-widgets.widget-full .widget,
+.flexible-widgets.widget-area .widget:nth-of-type(1),
+.flexible-widgets.widget-halves.uneven .widget:last-of-type {
+  width: 100%;
+}
+
+.flexible-widgets.widget-fourths .widget {
+  width: 25%;
+}
+
+.flexible-widgets.widget-halves .widget {
+  width: 50%;
+}
+
+.flexible-widgets.widget-thirds .widget {
+  width: 33.33%;
+}
+
+.flexible-widgets.widget-halves .widget:nth-child(even),
+.flexible-widgets.widget-thirds .widget:nth-child(3n+2),
+.flexible-widgets.widget-fourths .widget:nth-child(4n+2) {
+  clear: left;
 }
 
 /* Featured Content
