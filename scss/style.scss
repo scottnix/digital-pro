@@ -20,8 +20,8 @@
 // - Sass Mixins
 // - HTML5 Reset
 //   - Normalize.css
-//   - Box Sizing
 // - Defaults
+//   - Box Sizing
 //   - Typographical Elements
 //   - Headings
 //   - Objects
@@ -79,10 +79,14 @@
 
 @import 'mixins';
 
-/* Normalize.css
+/* Normalize.css v5.0.0
 ---------------------------------------------------------------------------------------------------- */
 
 @import 'normalize';
+
+
+/* Defaults
+---------------------------------------------------------------------------------------------------- */
 
 /* Box Sizing
 --------------------------------------------- */
@@ -92,9 +96,6 @@
 *:after {
   box-sizing: border-box;
 }
-
-/* Defaults
----------------------------------------------------------------------------------------------------- */
 
 /* Typographical Elements
 --------------------------------------------- */
@@ -268,7 +269,7 @@ img {
 }
 
 img.entry-image {
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .full-width-content img.pull {
@@ -287,12 +288,11 @@ img.entry-image {
 .gallery-item {
   margin: 0 0 28px;
 
-  @include breakpoint(600px) {
+  .gallery-columns-1 {
+    @include breakpoint(600px) {
     float: left;
+    }
   }
-}
-
-.gallery-item {
   .gallery-columns-2 & {
 
     @include breakpoint(600px) {
@@ -327,7 +327,7 @@ img.entry-image {
 
     @include breakpoint(600px) {
       width: 14.2857%;
-}
+    }
   }
   .gallery-columns-8 & {
 
@@ -355,14 +355,9 @@ img.entry-image {
 }
 
 .gallery img {
-  border: 1px solid #ddd;
   height: auto;
-  padding: 4px;
-}
-
-.gallery img:hover,
-.gallery img:focus {
-  border: 1px solid #999;
+  width: 100%;
+  padding: 5px;
 }
 
 /* Forms
@@ -449,9 +444,9 @@ input[type="submit"],
   padding: 20px 25px;
 }
 
-a.more-link {
+a.more-link,
+.button {
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
 }
 
 a.more-link:hover,
@@ -505,10 +500,6 @@ input:focus[type="submit"],
   border-width: 0;
   color: #777;
   cursor: not-allowed;
-}
-
-.button {
-  display: inline-block;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -580,15 +571,6 @@ input[type="search"]::-webkit-search-results-button {
     margin-left: 0;
   }
 }
-
-
-
-
-
-
-
-
-
 
 /* Tables
 --------------------------------------------- */
@@ -684,14 +666,14 @@ th {
   @extend %clearfix;
 }
 
-.digital-landing .site-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+.digital-landing .site-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Site Inner
@@ -704,16 +686,8 @@ th {
 
   @include breakpoint(800px) {
     max-width: 1280px;
-    margin-top: 90px;
   }
 }
-
-
-.digital-landing .site-inner,
-.front-page .site-inner {
-  margin-top: 0;
-}
-
 
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
@@ -779,7 +753,6 @@ th {
 }
 
 .breadcrumb {
-  max-width: 660px;
   margin: 0 auto 10%;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -837,20 +810,23 @@ th {
 }
 
 .entry-title {
-    font-size: 36px;
-    font-size: 3.6rem;
+    @include font-size(3.6);
     letter-spacing: -2px;
 
   @include breakpoint(600px) {
-    font-size: 48px;
-    font-size: 4.8rem;
-    font-weight: 700;
+    @include font-size(4.8);
     letter-spacing: -3px;
   }
 }
 
+.content {
 
-
+  @include breakpoint(800px) {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 8%;
+  }
+}
 
 .content .entry-title a,
 .content .entry-title a:focus,
@@ -972,10 +948,6 @@ a[rel~="attachment"]:hover,
   border-width: 0 !important;
 }
 
-.sticky {
-}
-
-
 /* Widgets
 ---------------------------------------------------------------------------------------------------- */
 
@@ -991,8 +963,8 @@ a[rel~="attachment"]:hover,
 
 .site-header {
   position: inherit;
-  text-align: center;
   padding: 28px 30px;
+  text-align: center;
   background-color: #fff;
   @extend %clearfix;
 
@@ -1005,6 +977,7 @@ a[rel~="attachment"]:hover,
 }
 
 .site-header.shrink {
+
   @include breakpoint(800px) {
     border-bottom: 1px solid #eee;
     padding: 18px 30px;
@@ -1019,18 +992,32 @@ a[rel~="attachment"]:hover,
 --------------------------------------------- */
 
 .title-area {
-  float: left;
   margin-top: 8px;
+
+  @include breakpoint(800px) {
+    float: left;
+  }
 }
 
 .site-title {
+  margin-bottom: 0;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  @include font-size(2);
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 0;
   text-transform: uppercase;
+}
+
+.site-title a {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 278px;
+  height: 29px;
+  background: url(images/dustin-logo.png) no-repeat;
+
+  @media only screen and (min-width: 800px) {
+    display: block;
+  }
 }
 
 .site-title a,
@@ -1039,22 +1026,6 @@ a[rel~="attachment"]:hover,
   border-bottom-width: 0;
   color: #232525;
 }
-
-.site-title a {
-    display: inline-block;
-    text-indent: -9999px;
-    width: 278px;
-    height: 29px;
-    background: url(images/dustin-logo.png) no-repeat;
-}
-
-@media only screen and (min-width: 800px) {
-  .site-title a {
-      display: block;
-
-  }
-}
-
 
 .header-image .nav-primary:not(button) {
   margin-top: 22px;
@@ -1178,9 +1149,12 @@ a[rel~="attachment"]:hover,
 --------------------------------------------- */
 
 .nav-primary {
-  float: right;
   margin-top: 2px;
   @extend %clearfix;
+
+  @include breakpoint(800px) {
+    float: right;
+  }
 }
 
 .nav-primary .genesis-nav-menu li.last a {
@@ -1195,8 +1169,6 @@ a[rel~="attachment"]:hover,
   margin-left: 0;
 }
 
-
-
 /* Responsive Navigation
 --------------------------------------------- */
 
@@ -1206,21 +1178,23 @@ a[rel~="attachment"]:hover,
   visibility: hidden;
 }
 
-
 /* Content Area
 ---------------------------------------------------------------------------------------------------- */
 
-.content-sidebar .content,
-.sidebar-content .content {
-  width: 65%;
-}
-
 .content-sidebar .content {
-  float: left;
+
+  @include breakpoint(800px) {
+    float: left;
+    width: 65%
+  }
 }
 
 .sidebar-content .content {
-  float: right
+
+  @include breakpoint(800px) {
+    float: right
+    width: 65%;
+  }
 }
 
 .page .content,
@@ -1237,39 +1211,30 @@ a[rel~="attachment"]:hover,
 /* Entries
 --------------------------------------------- */
 
-
 .entry {
-  border-bottom: 1px solid #eee;
   margin-bottom: 10%;
   padding-bottom: 10%;
+  border-bottom: 1px solid #eee;
   @extend %clearfix;
-}
-
-.page .entry,
-.single .entry {
-/*   border-bottom: none; // hmm not sure what the hell this was doing. The border bottom is needed for "blog" page..., but not other single pages.
-  margin-bottom: 0;
-  padding-bottom: 0; */
-}
-
-.page .entry-content,
-.single .entry-content {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 660px;
-}
-
-.page.page-template-page_blog .entry-content {
-  max-width: none;
 }
 
 .entry-content {
   @extend %clearfix;
 
+}
+
+.page .entry-content,
+.single .entry-content {
+
   @include breakpoint(800px) {
-    margin-left: 0;
-    margin-right: 0;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
   }
+}
+
+.page.page-template-page_blog .entry-content {
+  max-width: none;
 }
 
 .entry-content p:last-child {
@@ -1298,41 +1263,23 @@ a[rel~="attachment"]:hover,
 /* Intro Text
 --------------------------------------------- */
 
-.single .entry-content p.intro {
+.intro {
   color: #232525;
-  display: block;
-  font-size: 20px;
-  font-size: 2rem;
+  @include font-size(2);
   font-style: italic;
 }
 
-.single .entry-content p.intro:after {
-  border-bottom: 1px solid #232525;
+.intro:after {
   content: "";
   display: block;
+  width: 10%;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  width: 10%;
+  border-bottom: 1px solid #232525;
 }
 
 /* Entry Meta
 --------------------------------------------- */
-
-p.entry-meta {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.entry-meta a,
-.entry-meta a:focus,
-.entry-meta a:hover {
-  border-bottom-width: 0;
-}
 
 .entry-header {
 
@@ -1344,11 +1291,12 @@ p.entry-meta {
 
 .page .entry-header,
 .single .entry-header {
+  max-width: 100%;
 
   @include breakpoint(800px) {
-    margin: 0 auto 5%;
+    clear: none;
     max-width: 660px;
-    clear: none; // todo, check issues with other pages.
+    margin: 0 auto 5%;
   }
 }
 
@@ -1357,42 +1305,17 @@ p.entry-meta {
 }
 
 .entry-footer {
+  max-width: 660px;
   margin: 30px auto 60px;
-  max-width: 660px;
 }
 
-/* After Entry
---------------------------------------------- */
-
-.after-entry {
-  border: 1px solid #eee;
-  margin: 0 auto 10%;
-  max-width: 660px;
-  overflow: hidden;
-  padding: 40px;
-}
-
-.after-entry .widget {
-  margin-bottom: 40px;
-}
-
-.after-entry p:last-child,
-.after-entry .widget:last-child {
-  margin-bottom: 0;
-}
-
-.after-entry ol,
-.after-entry ul {
-  margin-bottom: 30px;
-  margin-left: 40px;
-}
-
-.after-entry ol > li {
-  list-style-type: decimal;
-}
-
-.after-entry ul > li {
-  list-style-type: disc;
+.entry-meta {
+  font-family: 'Poppins', sans-serif;
+  @include font-size(1.2);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 /* Pagination
@@ -1401,13 +1324,12 @@ p.entry-meta {
 .pagination {
   clear: both;
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
+  @include font-size(1.2);
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 5%;
+  margin-right: auto;
+  margin-left: auto;
   text-transform: uppercase;
   @extend %clearfix;
 }
@@ -1419,7 +1341,6 @@ p.entry-meta {
 .pagination a:focus,
 .pagination a:hover {
   border-bottom: 1px solid #e85555;
-
 }
 
 .adjacent-entry-pagination {
@@ -1451,27 +1372,26 @@ p.entry-meta {
 /* Sidebar
 --------------------------------------------- */
 
-.content-sidebar .sidebar,
-.sidebar-content .sidebar {
-  width: 30%;
-}
-
 .content-sidebar .sidebar {
-  float: right;
+
+  @include breakpoint(800px) {
+    float: right;
+    width: 30%;
+  }
 }
 
 .sidebar-content .sidebar {
-  float: left;
+
+  @include breakpoint(800px) {
+    float: left;
+    width: 30%;
+  }
 }
 
-.sidebar .widgettitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+.sidebar .widget-title {
   margin-bottom: 10px;
-  text-transform: uppercase;
+  @include font-size(1.2);
+  letter-spacing: 1px;
 }
 
 .sidebar .widget {
@@ -1555,11 +1475,6 @@ p.form-submit,
   }
 }
 
-
-
-
-
-
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1583,26 +1498,22 @@ p.form-submit,
 }
 
 .site-footer p {
-  @include font-size(1.2);
   margin-bottom: 0;
+  @include font-size(1.2);
 
   @include breakpoint(800px) {
-      float: left;
-      width: 50%;
-      text-align: right;
-      padding: 0 10px 0 0;
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding: 0 10px 0 0;
   }
-}
-
-.creds {
-
 }
 
 /* Secondary Navigation in Footer
 --------------------------------------------- */
 
 .nav-secondary {
-  display: block !important; // get back to this, first menu grabs these classes too
+  display: block !important;
   @extend %clearfix;
 
   @include breakpoint(800px) {
@@ -1614,10 +1525,12 @@ p.form-submit,
 .nav-secondary li.menu-item {
   display: inline-block !important;
   float: left;
-    @include breakpoint(800px) {
-        display: block;
-    }
+
+  @include breakpoint(800px) {
+      display: block;
+  }
 }
+
 .nav-secondary a {
   font-family: 'Lora', sans-serif;
   letter-spacing: 0;
@@ -1627,7 +1540,6 @@ p.form-submit,
   margin: 0;
   text-transform: none;
 }
-
 
 /* Fadeup Effect
 ---------------------------------------------------------------------------------------------------- */
@@ -1639,27 +1551,21 @@ p.form-submit,
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
 }
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
 .fadeInUp {
     animation-name: fadeInUp;
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-
-
 @media only screen and (max-width: 800px) {
 
-
-
-  .content-sidebar .content,
-  .content-sidebar .sidebar,
   .header-image .site-title > a,
   .js .genesis-nav-menu .sub-menu,
   .js .genesis-nav-menu .sub-menu a,
@@ -1669,16 +1575,12 @@ p.form-submit,
     width: 100%;
   }
 
-
-
   .header-image .nav-primary:not(button) {
     background: #fff;
     margin-top: 0;
     padding-bottom: 20px;
   }
 
-  .content-sidebar .content,
-  .content-sidebar .sidebar,
   .nav-primary,
   .sidebar-content .content,
   .sidebar-content .sidebar,
@@ -1725,6 +1627,10 @@ p.form-submit,
     background: none;
     border-width: 0;
   }
+  button.menu-togle:focus,
+  button.menu-toggle:hover {
+    outline-style: none;
+  }
 
   .menu-toggle {
     padding-bottom: 0;
@@ -1738,15 +1644,13 @@ p.form-submit,
   .menu-toggle:before,
   .menu-toggle.activated:before {
     color: #1e1e1e;
-    content: "\f130";
-    display: inline-block;
+    content: "\f130" !important;
+    display: inline-block !important;
     font: normal 20px/1 'ionicons';
     margin: 0 auto;
     padding-right: 10px;
     text-rendering: auto;
-    -webkit-transform: translate(0, 0);
-    -ms-transform:     translate(0, 0);
-    transform:         translate(0, 0);
+    transform: translate(0, 0);
     vertical-align: middle;
   }
 
@@ -1764,9 +1668,7 @@ p.form-submit,
     display: inline-block;
     font: normal 16px/1 'ionicons';
     text-rendering: auto;
-    -webkit-transform: translate(0, 0);
-    -ms-transform:     translate(0, 0);
-    transform:         translate(0, 0);
+    transform: translate(0, 0);
   }
 
   .sub-menu-toggle.activated:before {
@@ -1836,22 +1738,6 @@ p.form-submit,
     color: #e85555;
   }
 
-  .content {
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom: 8%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .page .entry-header,
-  .single .entry-header {
-    max-width: 100%;
-  }
-
-
-
-
   img.alignleft.entry-image,
   img.alignright.entry-image,
   .full-width-content img.pull {
@@ -1866,18 +1752,7 @@ p.form-submit,
     margin-bottom: 30px;
     max-width: 100%;
   }
-
-
-
-
-
-
-
-
-
-
 }
-
 
 /* Front Page
 ---------------------------------------------------------------------------------------------------- */

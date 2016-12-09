@@ -16,15 +16,15 @@
 
 .front-page-1 {
   display: table;
-  margin-top: 90px;
-  overflow: hidden;
   table-layout: fixed;
   width: 100%;
+  margin-top: 90px;
+  overflow: hidden;
 }
 
 .front-page-1 .wrap {
-  margin: 0 auto;
   max-width: 1280px;
+  margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -39,9 +39,9 @@
 
 .front-page-1 .widget-area {
   display: table-cell;
+  width: 100%;
   padding-top: 20px;
   vertical-align: middle;
-  width: 100%;
 }
 
 .front-page-1,
@@ -50,21 +50,19 @@
   color: #F1F1F1;
 }
 
-.front-page-1 .widget_text .widget-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 84px;
-  font-size: 8.4rem;
+.front-page-1 .widget-title {
+  margin-bottom: 0;
+  @include font-size(8.4);
   font-weight: 600;
   letter-spacing: -3px;
-  margin-bottom: 0;
   text-transform: none;
 }
 
 .front-page-1 .textwidget {
+  @include font-size(2.6);
 
-  @include breakpoint(600px) {
-     font-size: 40px;
-     font-size: 4rem;
+  @include breakpoint(800px) {
+    @include font-size(4);
   }
 }
 
@@ -113,20 +111,15 @@
 }
 
 .front-page-2 .widget-area {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 .front-page-2 .flexible-widgets.widget-halves .widget,
 .front-page-2 .widget {
   float: left;
-  margin-bottom: 0;
   width: 50%;
+  margin-bottom: 0;
 }
 
 .front-page-2 .widget-wrap {
@@ -205,9 +198,8 @@
   padding: 8px 0 8px 36px;
 }
 
-.front-page-2 .enews-widget {
+.front-page-2 .widget-title {
   text-align: center;
-  color: #f1f1f1;
 }
 
 
@@ -342,14 +334,7 @@
 
 }
 
-@media only screen and (max-width: 600px) {
 
-  .front-page-1 .widget_text .widget-title {
-    font-size: 36px;
-    font-size: 3.6rem;
-  }
-
-}
 
 
 // fix subscribe link
@@ -380,7 +365,8 @@
 
 // stupid overspecific classes, need to fix eventually.
 
-.front-page-2 .flexible-widgets.widget-full .widget-wrap, .front-page-2 .flexible-widgets.widget-halves.uneven .widget:last-of-type .widget-wrap {
+.front-page-2 .flexible-widgets.widget-full .widget-wrap,
+.front-page-2 .flexible-widgets.widget-halves.uneven .widget:last-of-type .widget-wrap {
   padding-top: 2em;
   padding-bottom: 2em;
 }

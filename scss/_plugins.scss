@@ -3,18 +3,14 @@
 
 .enews-widget ::placeholder {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: 400;
+  @include font-size(1.4);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 .enews-widget input {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: 400;
+  @include font-size(1.4);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 30px;
