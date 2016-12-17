@@ -18,8 +18,14 @@
   display: table;
   table-layout: fixed;
   width: 100%;
-  margin-top: 90px;
   overflow: hidden;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @include breakpoint(800px) {
+    margin-top: 90px;
+  }
 }
 
 .front-page-1 .wrap {
@@ -52,10 +58,14 @@
 
 .front-page-1 .widget-title {
   margin-bottom: 0;
-  @include font-size(8.4);
+  @include font-size(6);
   font-weight: 600;
   letter-spacing: -3px;
   text-transform: none;
+
+  @include breakpoint(800px) {
+    @include font-size(8.4);
+  }
 }
 
 .front-page-1 .textwidget {
@@ -98,14 +108,14 @@
 --------------------------------------------- */
 
 .front-page-2 {
-  background-color: #fff;
-  border-top: 70px solid transparent;
   margin-top: -70px;
+  border-top: 70px solid transparent;
+  background-color: #232525;
 }
 
 .front-page-2 .wrap {
-  margin: 0 auto;
   max-width: 1280px;
+  margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -164,8 +174,8 @@
   margin-left: 10px;
 }
 
-.front-page-2 ul li {
-  color: #232525;
+.front-page-2 li {
+  color: #f1f1f1;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
@@ -174,120 +184,40 @@
   text-transform: uppercase;
 }
 
-.front-page ul.checkmark {
-  margin-top: 20px;
-}
-
-.front-page-2 ul.checkmark li:before {
-  font-size: 48px;
-  font-size: 4.8rem;
-  vertical-align: middle;
-}
-
-.front-page-2 ul.checkmark li:before {
-  color: #e85555;
-  content: "\f3fd";
-  display: inline-block;
-  font-family: 'ionicons';
-  margin-left: -36px;
-  width: 36px;
-}
-
-.front-page-2 ul.checkmark li {
-  line-height: 1;
-  padding: 8px 0 8px 36px;
+.front-page-2 a {
+  color: #f1f1f1;
 }
 
 .front-page-2 .widget-title {
   text-align: center;
+  color: #f1f1f1;
 }
 
+// fix subscribe link eventually move this to plugins
+.front-page-2 {
 
-/* Front Page 3
---------------------------------------------- */
-
-.front-page-3 {
-  background-color: #232525;
-  padding: 8% 4%;
-  text-align: center;
+  .enews-widget {
+    input[type="email"] {
+      @include breakpoint(800px) {
+          width: 50%;
+          float: left;
+          border: 2px solid #f5f5f5;
+      }
+    }
+    input[type="submit"] {
+      @include breakpoint(800px) {
+          width: 50%;
+          float: left;
+          border-radius: 0;
+      }
+    }
+  }
 }
-
-.front-page-3 .widget {
-  margin-bottom: 40px;
-}
-
-.front-page-3 .widget-fourths .widget:nth-last-child(-n+4),
-.front-page-3 .widget-halves.even .widget:nth-last-child(-n+2),
-.front-page-3 .widget-thirds .widget:nth-last-child(-n+3) {
-  margin-bottom: 0;
-}
-
-.front-page-3 .wrap {
-  margin: 0 auto;
-  max-width: 1280px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.front-page-3,
-.front-page-3 a,
-.front-page-3 h4,
-.front-page-3 p,
-.front-page-3 .icon,
-.front-page-3 .widget-title {
-  color: #fff;
-}
-
-.front-page-3 a:focus,
-.front-page-3 a:hover {
-  color: #e85555;
-}
-
-.front-page-3 h4 {
-  font-size: 20px;
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.front-page-3 p {
-  font-size: 16px;
-  font-size: 1.6rem;
-}
-
-.front-page-3 .icon {
-  display: block;
-  font-size: 72px;
-  font-size: 7.2rem;
-}
-
-.front-page-3 button:focus,
-.front-page-3 button:hover,
-.front-page-3 input:focus[type="button"],
-.front-page-3 input:hover[type="button"],
-.front-page-3 input:focus[type="reset"],
-.front-page-3 input:hover[type="reset"],
-.front-page-3 input:focus[type="submit"],
-.front-page-3 input:hover[type="submit"],
-.front-page-3 .textwidget a.button:focus,
-.front-page-3 .textwidget a.button:hover {
-  background-color: #fff;
-  border: none;
-  color: #232525;
-}
-
 
 /* Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 800px) {
-
-  .front-page-1 {
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-  }
 
   .front-page-1 .widget-area {
     padding-top: 0;
@@ -305,11 +235,6 @@
   .flexible-widgets .widget {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  .front-page-1 .widget_text .widget-title {
-    font-size: 60px;
-    font-size: 6rem;
   }
 
   .front-page-2 .flexible-widgets.widget-halves .widget,
@@ -332,35 +257,6 @@
     padding-top: 8%;
   }
 
-}
-
-
-
-
-// fix subscribe link
-.front-page-2 {
-  background-color: #232525;
-  .widget-wrap {
-  }
-  .enews-widget {
-    input[type="email"] {
-      @include breakpoint(800px) {
-          width: 50%;
-          float: left;
-          border: 2px solid #f5f5f5;
-      }
-    }
-    input[type="submit"] {
-      @include breakpoint(800px) {
-          width: 50%;
-          float: left;
-          border-radius: 0;
-      }
-    }
-  }
-  .widget-title {
-    color: #f1f1f1;
-  }
 }
 
 // stupid overspecific classes, need to fix eventually.

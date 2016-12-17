@@ -1185,14 +1185,14 @@ a[rel~="attachment"]:hover,
 
   @include breakpoint(800px) {
     float: left;
-    width: 65%
+    width: 65%;
   }
 }
 
 .sidebar-content .content {
 
   @include breakpoint(800px) {
-    float: right
+    float: right;
     width: 65%;
   }
 }
